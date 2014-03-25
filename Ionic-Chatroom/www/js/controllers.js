@@ -23,7 +23,7 @@ angular.module('chatRoom.controllers', [])
     if (!roomName) return;
       
     var roomId = Math.floor(Math.random() * 5000001);
-      
+
     $scope.rooms.$add({
       id: roomId,
       title: roomName,

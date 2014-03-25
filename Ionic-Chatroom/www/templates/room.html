@@ -9,11 +9,11 @@
 <ion-view title="room.title">
   <ion-content
     scroll="true"
-    on-refresh="onRefresh()"
-    on-refresh-opening="onRefreshOpening(amount)"
-    refresh-complete="refreshComplete"
     animate-nav="true"
     >
+    <ion-refresher on-refresh="onRefresh()"
+      on-pulling="onRefreshOpening(amount)">
+    </ion-refresher>
 
     <div ng-repeat="message in messages | orderBy:'created_at'" type="item-text-wrap" ng-show="message.content">
       <div class="item item-body message">

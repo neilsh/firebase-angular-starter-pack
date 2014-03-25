@@ -1,12 +1,12 @@
-<view>
-    <header-bar
+<ion-view>
+    <ion-header-bar
                 title="'Create a Room'"
                 left-buttons="leftButtons"
                 right-buttons="rightButtons"
                 type="bar-energized"
                 align-title="center">
-    </header-bar>
-    <content has-header="true">        
+    </ion-header-bar>
+    <ion-content has-header="true">
         <form ui-keypress="{13:'createRoom()'}">
             <div class="list list-inset">
                 <label class="item item-input item-stacked-label">
@@ -22,5 +22,5 @@
                 <button class="button button-full button-positive" ng-click="createRoom(newRoomName, newRoomDescription)">Submit</button>
             </div>
         </form>
-    </content>
-</view>
+    </ion-content>
+</ion-view>

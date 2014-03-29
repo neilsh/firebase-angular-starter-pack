@@ -22,7 +22,6 @@ angular.module('chatRoom', ['ionic', 'chatRoom.services', 'chatRoom.filters', 'c
     templateUrl: 'templates/new_room.html',
     controller: 'RoomCreateCtrl'
   });
-
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');

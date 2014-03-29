@@ -4,15 +4,9 @@ angular.module('chatRoom.controllers', [])
   var ref = new Firebase('https://chatroom-io.firebaseio.com/opened_rooms');  
   $scope.rooms = $firebase(ref);
 
-  $scope.rightButtons = [
-    {
-      type: 'button-energized',
-      content: '<i class="icon ion-plus"></i>',
-      tap: function(e) {
-        $location.path("/new");
-      }
-    }
-  ];
+  $scope.rightButtonTap = function(e) {
+      $location.path("/new");
+  }
 })
 
 .controller('RoomCreateCtrl', function($scope, $timeout, $firebase, $location) {
@@ -34,15 +28,9 @@ angular.module('chatRoom.controllers', [])
     $location.path('/rooms/' + roomId);
   };
 
-  $scope.rightButtons = [
-    {
-      type: 'button-energized',
-      content: '<i class="icon ion-plus"></i>',
-      tap: function(e) {
-        $location.path("/new");
-      }
-    }
-  ];
+  $scope.leftButtonTap = function(e) {
+      $location.path("/");
+  }
 })
 
 
@@ -55,15 +43,9 @@ angular.module('chatRoom.controllers', [])
   $scope.messagesObj = $firebase(messagesRef);
   $scope.username = 'User' + Math.floor(Math.random() * 501);
 
-  $scope.leftButtons = [
-    { 
-      type: 'button-energized',
-      content: '<i class="icon ion-arrow-left-c"></i>',
-      tap: function(e) {
-        $location.path('/');
-      }
-    }
-  ]
+  $scope.leftButtonTap = function() {
+      $location.path('/');
+  }
 
   var scrollBottom = function() {
     // Resize and then scroll to the bottom
@@ -111,5 +93,5 @@ angular.module('chatRoom.controllers', [])
   };
 })
 
-.controller('AboutCtrl', function($scope) {})
+.controller('AboutCtrl', function($scope) {})//FIXME: currently doesn't seem to actually have a way to reach this controller
 .controller('AppCtrl', function($scope, $state) {});

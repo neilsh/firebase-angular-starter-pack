@@ -1,9 +1,11 @@
-<ion-header-bar
-  title="{{room.title}}"
-  left-buttons="leftButtons"
-  right-buttons="rightButtons"
-  type="bar-energized"
+<ion-header-bar class="bar-energized"
   align-title="center">
+    <div class="buttons">
+      <button class="button button-energized" ng-click="leftButtonTap()">
+        <i class="icon ion-arrow-left-c"></i>
+      </button>
+    </div>
+  <h1 class="title">{{room.title}}</h1>
 </ion-header-bar>
 
 <ion-view title="{{room.title}}">
